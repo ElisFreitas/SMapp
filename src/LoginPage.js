@@ -34,7 +34,7 @@ class LoginPage extends React.Component {
     }
 
     openCategories() {
-        this.props.handler("GamePage");
+        this.props.handler("CategoriesPage");
     }
 
     openInfo() {
