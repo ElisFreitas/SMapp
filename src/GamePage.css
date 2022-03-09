@@ -5,3 +5,27 @@
 .nav-button {
     height: 25vh;
 }
+
+#scoring {
+   padding-bottom: 2.5vh;
+   padding-top: 2.5vh;
+   width: 100%;
+}
+ 
+#score-bar-container {
+   width: 40%;
+   height: 4vh;
+   left: 50%;
+   outline: solid 1px black;
+   margin: auto;
+   margin-bottom: 2.5vh;
+}
+ 
+#score-bar {
+   height: 100%;
+   background-color: red;
+   -webkit-transition: 0.4s ease-out;
+   -moz-transition: 0.4s ease-out;
+   -o-transition: 0.4s ease-out;
+   transition: 0.4s ease-out;
+}
