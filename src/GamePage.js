@@ -53,7 +53,7 @@ class GamePage extends React.Component {
     prevQuestion() {
         let newIndex = this.state.currentQuestionIndex - 1;
         if (newIndex === -1) {
-            newIndex = this.state.length - 1;
+            newIndex = this.state.questions.length - 1;
         }
 
         this.setState({
