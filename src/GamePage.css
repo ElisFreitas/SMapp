@@ -18,6 +18,7 @@
    display: inline-block;
    background-color: white;
    border-radius: 10px;
+   position: relative;
 }
 
 #current-image {
@@ -60,6 +61,18 @@
 
 .nav-button {
    margin-right: 5vw;
+}
+
+#phrase-container {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   margin-bottom: 2vh;
+}
+
+.phrase {
+   text-align: center;
+   margin: 1vh;
 }
 
 

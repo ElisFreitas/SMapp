@@ -9,8 +9,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentPage: "LoginPage",
+      currePageData: null,
       isInfoOpen: false,
-      questions: null
     };
   }
 
@@ -38,7 +38,7 @@ class App extends React.Component {
         )}
         {(this.state.currentPage === "LoginPage") && <LoginPage handler={this.changePage.bind(this)} setUser={this.setUser.bind(this)} />}
         {(this.state.currentPage === "CategoriesPage") && <CategoriesPage handler={this.changePage.bind(this)} userName={this.state.userName} />}
-        {(this.state.currentPage === "GamePage") && <GamePage handler={this.changePage.bind(this)} questions={this.state.questions} />}
+        {(this.state.currentPage === "GamePage") && <GamePage handler={this.changePage.bind(this)} questions={this.state.currentPageData} />}
       </div>
     );
   }
@@ -57,9 +57,17 @@ class App extends React.Component {
     });
   }
 
-  changePage(page) {
+  changePage(page, data) {
+    let pageData;
+
+    if(data)
+      pageData = data;
+    else 
+      pageData = null;
+
     this.setState({
-      currentPage: page
+      currentPage: page,
+      currentPageData: pageData
     });
   }
 

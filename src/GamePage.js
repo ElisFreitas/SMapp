@@ -7,11 +7,7 @@ class GamePage extends React.Component {
 
         this.state = {
             currentQuestionIndex: 0,
-            questions: [
-                { imageSource: "ice-cream.jpeg", points: 50, audioSource: null, isCorrect: false },
-                { imageSource: "burger.jpg", points: 60, audioSource: null, isCorrect: false },
-                { imageSource: "restroom.jpg", points: 60, audioSource: null, isCorrect: false },
-            ]
+            questions: this.props.questions
         }
     }
 
@@ -23,6 +19,11 @@ class GamePage extends React.Component {
                 </div>
                 <div id="prompt-container">
                     <img id="current-image" src={this.state.questions[this.state.currentQuestionIndex].imageSource} />
+                    <div id="phrase-container">
+                        <div className='phrase'>{this.state.questions[this.state.currentQuestionIndex].phrase[0]}</div>
+                        <div className='phrase'>{this.state.questions[this.state.currentQuestionIndex].phrase[1]}</div>
+                        <div className='phrase'>{this.state.questions[this.state.currentQuestionIndex].phrase[2]}</div>
+                    </div>
                 </div>
                 <div id="points-container">
                     <div id="score-bar-container">
@@ -64,22 +65,14 @@ class GamePage extends React.Component {
     }
 
     calculateTotalScore() {
-        let total = 0;
-
-        this.state.questions.forEach(q => {
-            total = total + q.points;
-        });
-
-        return total
+        return this.state.questions.length * 3;
     }
 
     calculateCurrentScore() {
         let total = 0;
 
         this.state.questions.forEach(q => {
-            if (q.isCorrect) {
-                total = total + q.points;
-            }
+            total = total + q.scoreCount;
         });
 
         return total
@@ -87,20 +80,28 @@ class GamePage extends React.Component {
 
     scoreCorrect() {
         let updatedQuestions = this.state.questions;
-        updatedQuestions[this.state.currentQuestionIndex].isCorrect = true;
+        const newCount = updatedQuestions[this.state.currentQuestionIndex].scoreCount + 1;
 
-        this.setState({
-            questions: updatedQuestions
-        })
+        if (newCount <= 3) {
+            updatedQuestions[this.state.currentQuestionIndex].scoreCount = newCount;
+
+            this.setState({
+                questions: updatedQuestions
+            })
+        }
     }
 
     scoreWrong() {
         let updatedQuestions = this.state.questions;
-        updatedQuestions[this.state.currentQuestionIndex].isCorrect = false;
+        const newCount = updatedQuestions[this.state.currentQuestionIndex].scoreCount - 1;
 
-        this.setState({
-            questions: updatedQuestions
-        })
+        if (newCount >= 0) {
+            updatedQuestions[this.state.currentQuestionIndex].scoreCount = newCount;
+
+            this.setState({
+                questions: updatedQuestions
+            })
+        }
     }
 }
 
