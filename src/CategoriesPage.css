@@ -1,3 +1,33 @@
+#categories-page {
+    width: 80%;
+    margin-left: 10%;
+}
+
+#categories-blurb {
+    margin-top: 5vw;
+    margin-bottom: 2.5vw;
+    font-size: 5vh;
+    text-align: center;
+    color: white;
+
+}
+
+.category {
+    margin-left: 5vw;
+    margin-top: 5vw;
+    padding: 5vw;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: white;
+
+}
+
 .category-image {
-    height: 25vh;
+    margin-top: 5vw;
+    height: 12.5vh;
+}
+
+.category-caption {
+    margin-top: 2.5vh;
+    text-align: center;
 }

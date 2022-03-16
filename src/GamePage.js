@@ -18,22 +18,23 @@ class GamePage extends React.Component {
     render() {
         return (
             <div id="game-page">
-                <div id="scoring">
+                <div id="score-values">
+                    {`Score: ${this.calculateCurrentScore()} / ${this.calculateTotalScore()}`}
+                </div>
+                <div id="prompt-container">
+                    <img id="current-image" src={this.state.questions[this.state.currentQuestionIndex].imageSource} />
+                </div>
+                <div id="points-container">
                     <div id="score-bar-container">
-                        <div id="score-bar" style={ { width: this.calculateCurrentScore() / this.calculateTotalScore() * 100 + "%"} }/>
+                        <div id="score-bar" style={{ height: this.calculateCurrentScore() / this.calculateTotalScore() * 100 + "%" }} />
                     </div>
-                    {`Score ${this.calculateCurrentScore()} out of ${this.calculateTotalScore()}`}
+                    <div id="score-buttons-container">
+                        <img className='score-button icon-button' id="correct-button" src='correct.png' onClick={this.scoreCorrect.bind(this)} />
+                        <img className='score-button icon-button' id="wrong-button" src='wrong.png' onClick={this.scoreWrong.bind(this)} />
+                    </div>
                 </div>
-                <img id="current-image" src={this.state.questions[this.state.currentQuestionIndex].imageSource} />
-                <div id="current-recording"></div>
-
-                <img className='nav-button' id='next-button' src={"next.png"} onClick={this.nextQuestion.bind(this)} />
-                <img className='nav-button' id='back-button' src={"back.png"} onClick={this.prevQuestion.bind(this)} />
-
-                <div id="score-buttons-container">
-                    <img className='nav-button' id="correct-button" src='correct.png' onClick={this.scoreCorrect.bind(this)} />
-                    <img className='nav-button' id="wrong-button" src='wrong.png' onClick={this.scoreWrong.bind(this)} />
-                </div>
+                <img className='nav-button icon-button' id='back-button' src={"back.png"} onClick={this.prevQuestion.bind(this)} />
+                <img className='nav-button icon-button' id='next-button' src={"next.png"} onClick={this.nextQuestion.bind(this)} />
             </div>
         );
     }

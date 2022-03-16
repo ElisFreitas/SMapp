@@ -12,44 +12,22 @@ class LoginPage extends React.Component {
     }
 
     render() {
-        return (<div>
-            <div id="login-header">
-                <div id="login-title">{"Unmute"}</div>
-                <div id="info-icon-outline" onClick={this.openInfo.bind(this)}>
-                    <div id="info-icon-text">
-                        {"Info"}
-                    </div>
-                </div>
-            </div>
-            <div id='login-page'>
-                <div id="login-blurb"> {"Who's playing today?"}</div>
-                <input id="user-name-input" onChange={this.updateName.bind(this)}/>
-                <button id="continue-button" onClick={this.openCategories.bind(this)} disabled={!this.state.userName}>
-                    {"Start"}
-                </button>
-                <div>
-                    {this.state.isInfoOpen && (
-                        <div id="info-box">
-                            <div id="info-text">{"Elis's app is an educational tool helping children of age 7 to 11 years to practice speaking in different situations."}</div>
-                            <button id="close-info-button" onClick={this.closeInfo.bind(this)}>{"Close"}</button>
-                        </div>
-                    )}
-                </div>
-            </div>
+        return <div id="login-page">
+            <div id="login-blurb" className='constant-width'> {"Who's playing today?"}</div>
+            <input id="user-name-input" className='rounded-edges medium-font' onChange={this.updateName.bind(this)} />
+            <button id="continue-button" className='rounded-edges medium-font' onClick={this.openCategories.bind(this)} disabled={!this.state.userName}>
+                {"Let's play!"}
+            </button>
+            <button id="continue-button" className='rounded-edges medium-font' onClick={this.openCategories.bind(this)} disabled={!this.state.userName}>
+                {"Let's play!"}
+            </button>
         </div>
-        );
+
     }
 
     openCategories() {
+        this.props.setUser(this.state.userName);
         this.props.handler("CategoriesPage");
-    }
-
-    openInfo() {
-        this.setState({ isInfoOpen: true });
-    }
-
-    closeInfo() {
-        this.setState({ isInfoOpen: false })
     }
 
     updateName(event) {
