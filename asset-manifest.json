@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/SMapp/static/css/main.d37f08ce.css",
+    "main.js": "/SMapp/static/js/main.361c7a5a.js",
+    "static/js/377.e4d1a5eb.chunk.js": "/SMapp/static/js/377.e4d1a5eb.chunk.js",
+    "static/media/background-gradient.png": "/SMapp/static/media/background-gradient.47938f804438cc91f81e.png",
+    "service-worker.js": "/SMapp/service-worker.js",
+    "index.html": "/SMapp/index.html",
+    "main.d37f08ce.css.map": "/SMapp/static/css/main.d37f08ce.css.map",
+    "main.361c7a5a.js.map": "/SMapp/static/js/main.361c7a5a.js.map",
+    "377.e4d1a5eb.chunk.js.map": "/SMapp/static/js/377.e4d1a5eb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d37f08ce.css",
+    "static/js/main.361c7a5a.js"
+  ]
+}
