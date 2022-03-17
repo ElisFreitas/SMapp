@@ -18,9 +18,6 @@ class LoginPage extends React.Component {
             <button id="continue-button" className='rounded-edges medium-font' onClick={this.openCategories.bind(this)} disabled={!this.state.userName}>
                 {"Let's play!"}
             </button>
-            <button id="continue-button" className='rounded-edges medium-font' onClick={this.openCategories.bind(this)} disabled={!this.state.userName}>
-                {"Let's play!"}
-            </button>
         </div>
 
     }

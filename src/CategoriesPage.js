@@ -28,17 +28,17 @@ class CategoriesPage extends React.Component {
                     <div className='category-caption'>{"Restaurant"}</div>
                 </div>
 
-                <div className='category' onClick={this.openGamePage.bind(this, schoolData)}>
+                <div className='category'>
                     <img className='category-image' src='School-category.png' />
                     <div className='category-caption'>{"School"}</div>
                 </div>
 
-                <div className='category' onClick={this.openGamePage.bind(this, partyData)}>
+                <div className='category'>
                     <img className='category-image' src='Party-category.png' />
                     <div className='category-caption'>{"Party"}</div>
                 </div>
 
-                <div className='category' onClick={this.openGamePage.bind(this, transportData)}>
+                <div className='category'>
                     <img className='category-image' src='Transport-category.png' />
                     <div className='category-caption'>{"Transport"}</div>
                 </div>

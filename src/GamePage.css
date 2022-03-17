@@ -21,9 +21,17 @@
    position: relative;
 }
 
+#current-image-container {
+   position: absolute;
+   width: 100%;
+   height: 50%;
+   text-align: center;
+}  
+
 #current-image {
-   width: 60%;
-   margin: 20%;
+   margin-top: 10vh;
+   max-width: 45%;
+   max-height: 70%;
 }
 
 #points-container {
